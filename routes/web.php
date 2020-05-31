@@ -18,17 +18,22 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-// Route::get('test', function () {
-//     return view('test');
-// });
+Route::get('/search', function () {
 
-// Route::get('/',function(){
-//     $name=request('name');
-//     return view('test',[
-//         'name'=>$name
-//     ]);
+    $name=request('name');
+    return view('test',[
+        'name'=>$name
+    ]);
     
-// });
+});
+
+Route::get('/',function(){
+    $name='Hello Bharat';
+    return view('test',[
+        'name'=>$name
+    ]);
+    
+});
 
 
 Route::get('/posts/{post}','PostsController@show');
