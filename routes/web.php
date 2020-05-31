@@ -37,3 +37,4 @@ Route::get('/',function(){
 
 
 Route::get('/posts/{post}','PostsController@show');
+Route::get('/test','StudentController@show');
