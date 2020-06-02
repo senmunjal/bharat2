@@ -18,23 +18,23 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/search', function () {
+// Route::get('/search', function () {
 
-    $name=request('name');
-    return view('test',[
-        'name'=>$name
-    ]);
+//     $name=request('name');
+//     return view('test',[
+//         'name'=>$name
+//     ]);
     
-});
+// });
 
-Route::get('/',function(){
-    $name='Hello Bharat';
-    return view('test',[
-        'name'=>$name
-    ]);
+// Route::get('/',function(){
+//     $name='Hello Bharat';
+//     return view('test',[
+//         'name'=>$name
+//     ]);
     
-});
+// });
 
 
-Route::get('/posts/{post}','PostsController@show');
-Route::get('/test','StudentController@show');
+// Route::get('/posts/{post}','PostsController@show');
+Route::resource('/students','StudentController');

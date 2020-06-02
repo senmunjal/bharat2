@@ -1,1 +1,0 @@
-bharat session_name

@@ -15,6 +15,8 @@ class StudentController extends Controller
     public function index()
     {
         //
+        $student = Student::all();        
+        return view('students.index',compact('student'));
     }
 
     /**
@@ -24,7 +26,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
@@ -35,7 +37,14 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student =new Student;
+        $student->name=request('name');
+        $student->email=request('email');
+        $student->last_name=request('last_name');
+        $student->middle_name=request('middle_name');
+        $student->address=request('address');
+        $student->save();
+        return redirect('/students');
     }
 
     /**
@@ -46,8 +55,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        $students=Student::all();
-        return view('listusers',compact('students'));
+        
     }
 
     /**
@@ -57,8 +65,9 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Student $student)
-    {
-        //
+    {   
+        return view('students.edit',compact('student'));
+        
     }
 
     /**
@@ -71,6 +80,12 @@ class StudentController extends Controller
     public function update(Request $request, Student $student)
     {
         //
+        $student->update($request->all());
+  
+        return redirect()->route('students.index')
+                        ->with('success','Blog updated successfully');
+       
+
     }
 
     /**
@@ -82,5 +97,9 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         //
+        $student->delete();
+  
+        return redirect()->route('students.index')
+                        ->with('success','Blogs deleted successfully');
     }
 }
