@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-// Route::get('/search', function () {
+// Route::get('/search/dgghgfhgfgh', function () {
 
 //     $name=request('name');
 //     return view('test',[
@@ -34,7 +34,6 @@ use Illuminate\Support\Facades\Route;
 //     ]);
     
 // });
-
-
 // Route::get('/posts/{post}','PostsController@show');
+
 Route::resource('/students','StudentController');

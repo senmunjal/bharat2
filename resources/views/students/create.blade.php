@@ -38,6 +38,24 @@
                 <input class="form-control" name="email" placeholder="Email"></input>
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Middle_name:</strong>
+                <input class="form-control" name="middle_name" placeholder="Middle_name"></input>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Last_name:</strong>
+                <input class="form-control" name="last_name" placeholder="Last_name"></input>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Address:</strong>
+                <input class="form-control" name="address" placeholder="Address"></input>
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
