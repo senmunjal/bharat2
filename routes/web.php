@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('test',[
 //         'name'=>$name
 //     ]);
-    
+
 // });
 
 // Route::get('/',function(){
@@ -32,8 +32,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('test',[
 //         'name'=>$name
 //     ]);
-    
+
 // });
 // Route::get('/posts/{post}','PostsController@show');
+Route::get('/admins/login', 'AdminController@login');
 
-Route::resource('/students','StudentController');
+Route::resource('/students', 'StudentController');
+
+Route::resource('/admins', 'AdminController');

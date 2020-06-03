@@ -15,7 +15,8 @@ class StudentController extends Controller
     public function index()
     {
         //
-        $student = Student::all();        
+        $student = Student::all();  
+           
         return view('students.index',compact('student'));
     }
 
@@ -80,7 +81,7 @@ class StudentController extends Controller
     public function update(Request $request, Student $student)
     {
         //
-        
+
         $student->update($request->all());
   
         return redirect()->route('students.index')
