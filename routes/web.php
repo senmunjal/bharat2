@@ -35,6 +35,9 @@ use Illuminate\Support\Facades\Route;
 
 // });
 // Route::get('/posts/{post}','PostsController@show');
+
+Route::post('/admins/log', 'AdminController@log');
+
 Route::get('/admins/login', 'AdminController@login');
 
 Route::resource('/students', 'StudentController');

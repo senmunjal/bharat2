@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        @csrf
+
         <div class="row">
             <div class="col-lg-6">
                 <h1>USER REGISTRATION</h1>
@@ -21,6 +21,7 @@
         </div>
         <div class="row">
             <form class="col-lg-12" action="{{ route('admins.store') }}" method="POST">
+                @csrf
                 <div class="col-lg-12 mt-3">
                     <div class="form-group">
                         <strong>Name:</strong>
@@ -36,13 +37,13 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <strong>Phone_number:</strong>
-                        <input class="form-control" name="Phone_number" placeholder="Phone_number"></input>
+                        <input class="form-control" name="phone_number" placeholder="Phone_number"></input>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <strong>Password:</strong>
-                        <input class="form-control" name="Password" placeholder=""></input>
+                        <input class="form-control" name="password" placeholder=""></input>
                     </div>
                 </div>
                 <div class="col-lg-2">
@@ -52,6 +53,6 @@
         </div>
 
     </div>
-</body>s
+</body>
 
 </html>

@@ -16,7 +16,8 @@
                 <h1>LOGIN PAGE</h1>
             </div>
 
-            <form class="col-lg-12" action="{{ route('admins.store') }}" method="POST">
+            <form class="col-lg-12" action="/admins/log" method="POST">
+                @csrf
                 <div class="col-lg-12">
                     <div class="form-group">
                         <strong>Email:</strong>
@@ -27,7 +28,7 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <strong>Password:</strong>
-                        <input class="form-control" name="Password" placeholder=""></input>
+                        <input class="form-control" name="password" placeholder=""></input>
                     </div>
                 </div>
                 <div class="col-lg-4">
