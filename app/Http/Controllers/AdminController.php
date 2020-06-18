@@ -38,7 +38,14 @@ class AdminController extends Controller
      */
     public function store(Request $request, Admin $admin)
     {
-        //
+        request()->validate(
+            [
+                'name' => 'required | max:30',
+                'email' => 'required | email |unique:users,email',
+                'password' => 'required | min:8 |max:30',
+                'phone_number' => 'required|min:10 |max:10 '
+            ]
+        );
         $admin = new Admin;
         $admin->name = request('name');
         $admin->email = request('email');
@@ -47,7 +54,9 @@ class AdminController extends Controller
 
         $admin->save();
 
-        return redirect('/admins');
+        $editAction = true;
+        $admin = Admin::where('flag', '0')->get();
+        return view('admins.dashboard', compact('admin', 'editAction'));
     }
 
     /**
@@ -69,7 +78,8 @@ class AdminController extends Controller
      */
     public function edit(Admin $admin)
     {
-        //
+
+
         return view('admins.edit', compact('admin'));
     }
 
@@ -82,7 +92,13 @@ class AdminController extends Controller
      */
     public function update(Request $request, Admin $admin)
     {
-        //
+        request()->validate(
+            [
+                'name' => 'required | max:30',
+                'email' => 'required | email |unique:users,email',
+                'phone_number' => 'required|min:10 |max:12 '
+            ]
+        );
         $admin->update($request->all());
 
         $editAction = true;
@@ -113,6 +129,12 @@ class AdminController extends Controller
 
     public function log(Request $request)
     {
+        request()->validate(
+            [
+                'email' => 'required | email |unique:users,email',
+                'password' => 'required | min:8 |max:30',
+            ]
+        );
         $email = request('email');
         $password = request('password');
 

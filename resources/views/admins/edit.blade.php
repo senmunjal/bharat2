@@ -9,6 +9,10 @@
 </head>
 
 <body>
+    <!-- @if($errors)
+    <p>{{$errors}}</p>
+    @endif -->
+
     <div class="container mt-5">
         <form action="{{ route('admins.update',$admin->id) }}" method="POST">
 
@@ -19,7 +23,9 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Name:</strong>
-                        <input name="name" value="{{$admin->name}}" class="form-control">
+
+                        <input class="form-control @error('name') alert alert-danger @enderror" name="name" placeholder="name" value="{{$admin->name}}"></input>
+                        <p class=" @error('name')alert-danger @enderror">{{$errors->first('name')}}</p>
                     </div>
                 </div>
 
@@ -27,13 +33,17 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Email:</strong>
-                        <input name="email" value="{{$admin->email}}" class="form-control">
+
+                        <input class="form-control @error('email') alert alert-danger @enderror" name="email" placeholder="email" value="{{$admin->email}}"></input>
+                        <p class="@error('email')alert-danger @enderror">{{$errors->first('email')}}</p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>phone:</strong>
-                        <input name="phone" value="{{$admin->phone}}" class="form-control">
+
+                        <input class="form-control @error('phone_number') alert alert-danger @enderror" name="phone_number" placeholder="phone_number" value="{{$admin->phone}}"></input>
+                        <p class="@error('phone_number')alert-danger @enderror">{{$errors->first('phone_number')}}</p>
                     </div>
                 </div>
 

@@ -25,25 +25,32 @@
                 <div class="col-lg-12 mt-3">
                     <div class="form-group">
                         <strong>Name:</strong>
-                        <input type="text" name="name" class="form-control" placeholder="Name">
+                        <input type="text" name="name" class="form-control @error('name') alert alert-danger @enderror" placeholder="Name" value="{{old('name')}}">
+                        <p class="@error('name')alert-danger @enderror">{{$errors->first('name')}}</p>
+
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <strong>Email:</strong>
-                        <input class="form-control" name="email" placeholder="Email"></input>
+
+                        <input class="form-control @error('email') alert alert-danger @enderror" name="email" placeholder="Email" value="{{old('email')}}"></input>
+                        <p class=" @error('email')alert-danger @enderror">{{$errors->first('email')}}</p>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <strong>Phone_number:</strong>
-                        <input class="form-control" name="phone_number" placeholder="Phone_number"></input>
+                        <input class="form-control @error('phone_number') alert alert-danger @enderror" name="phone_number" placeholder="Phone_number" value="{{old('phone_number')}}"></input>
+                        <p class="@error('phone_number')alert-danger @enderror">{{$errors->first('phone_number')}}</p>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <strong>Password:</strong>
-                        <input class="form-control" name="password" placeholder=""></input>
+
+                        <input class="form-control @error('password') alert alert-danger @enderror" name="password" placeholder="password" value="{{old('assword')}}"></input>
+                        <p class="@error('password')alert-danger @enderror">{{$errors->first('password')}}</p>
                     </div>
                 </div>
                 <div class="col-lg-2">
